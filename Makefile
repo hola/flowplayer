@@ -5,7 +5,7 @@ MXMLC_VERSION := $(shell mxmlc --version 2>/dev/null)
 ifdef MXMLC_VERSION
 	FLASH = $(shell which mxmlc)
 else
-	FLASH="/opt/flowplayer/flex3sdk/bin/mxmlc"
+	FLASH="/usr/local/ztools/flex_sdk/flex_sdk-4.14.1-2/bin/mxmlc"
 endif
 FLASH_COMPILE=$(FLASH) -default-frame-rate=50 -static-link-runtime-shared-libraries=true -library-path=.
 
@@ -73,7 +73,7 @@ flash:
 	@ cp lib/logo/logo.swc $(DIST)
 	@ cp lib/as/*.as $(DIST)
 	@ cd $(DIST) && $(FLASH_COMPILE) -define=CONFIG::HLS,false -output flowplayer.swf Flowplayer.as -source-path ./
-	@ cp deps/flashls.swc $(DIST)
+	@ cp deps/flashls_hola.swc $(DIST)
 	@ cd $(DIST) && $(FLASH_COMPILE) -define=CONFIG::HLS,true -output flowplayerhls.swf Flowplayer.as -source-path ./ 
 	@ cd $(DIST) && rm *.as *.swc
 
