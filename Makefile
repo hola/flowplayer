@@ -74,7 +74,7 @@ flash:
 	@ cp lib/as/*.as $(DIST)
 	@ cd $(DIST) && $(FLASH_COMPILE) -define=CONFIG::HLS,false -output flowplayer.swf Flowplayer.as -source-path ./
 	@ cp deps/flashls_hola.swc $(DIST)
-	@ cd $(DIST) && $(FLASH_COMPILE) -define=CONFIG::HLS,true -output flowplayerhls.swf Flowplayer.as -source-path ./ 
+	@ cd $(DIST) && $(FLASH_COMPILE) -define=CONFIG::HLS,true -output flowplayerhls_hola.swf Flowplayer.as -source-path ./ 
 	@ cd $(DIST) && rm *.as *.swc
 
 
